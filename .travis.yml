@@ -1,0 +1,11 @@
+sudo: required
+services:
+- docker
+language: bash
+script:
+# prepare qemu
+- docker run --rm --privileged multiarch/qemu-user-static:register --reset
+# build image
+- docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
+- docker build -t shoginn/raspbian-flightradar24 .
+- docker push shoginn/raspbian-flightradar24
