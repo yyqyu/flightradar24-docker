@@ -1,4 +1,4 @@
-FROM resin/armhf-alpine:latest
+FROM resin/armv7hf-debian:jessie
 
 ENV DUMP1090_HOST="" DUMP1090_PORT="" FR24_KEY="" 
 
